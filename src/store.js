@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
-import { counterReducer } from './counter.reducer';
-import usersReducer from './users.reducer';
+import { counterReducer } from './counter.reducer.js';
+import usersReducer from './users.reducer.js';
 
 const appReducer = combineReducers({
   counter: counterReducer,
-  user: usersReducer,
+  users: usersReducer,
 });
 
 const store = createStore(

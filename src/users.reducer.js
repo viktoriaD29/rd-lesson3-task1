@@ -1,10 +1,10 @@
-import { ADD_USER, DELETE_USER, UPDATE_USER } from './users.actions';
+import { ADD_USER, DELETE_USER, UPDATE_USER } from './users.actions.js';
 
-const initalState = {
-  usersList: []
-}
+const initialState = {
+  usersList: [],
+};
 
-const usersReducer = (state = initalState, action) => {
+const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_USER: {
       return {
@@ -26,11 +26,12 @@ const usersReducer = (state = initalState, action) => {
         if (user.id === action.payload.userId) {
           return {
             ...user,
-            ...action.payload.userData
-          }
+            ...action.payload.userData,
+          };
         }
-        return user
-      })
+
+        return user;
+      });
       return {
         ...state,
         usersList: newList,
